@@ -1,10 +1,6 @@
 import React from "react";
 
 const Card = (props) => {
-  //   const poster = {
-  //     width: "15rem",
-  //     // alignItems: "center",
-  //   };
   return (
     <div className="row mx-5 my-5 justify-content-center">
       <div className="card col-8">
@@ -18,7 +14,10 @@ const Card = (props) => {
             {props.mode === "movie"
               ? "Original release date: "
               : "First aired: "}
-            {props.release}
+            <b>{props.release}</b>
+          </p>
+          <p>
+            <b>{props.score}/10</b> ⭐️ from <b>{props.votes}</b> ratings
           </p>
         </div>
       </div>

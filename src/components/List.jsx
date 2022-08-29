@@ -34,7 +34,7 @@ const List = () => {
             releaseDate:
               mediaToggle === "movie" ? item.release_date : item.first_air_date,
             poster: "https://image.tmdb.org/t/p/original/" + item.poster_path,
-            rating: item.vote_average,
+            rating: item.vote_average.toFixed(2),
             votes: item.vote_count,
           };
           // setList((prevList) => [...prevList, toAdd]);
@@ -46,7 +46,6 @@ const List = () => {
 
   return (
     <div className="container-fluid text-center">
-      <p>Mode: {mediaToggle.toUpperCase()}</p>
       <div className="row justify-content-center">
         <div className="col-4 active">
           <h3 name="movie" value="movie" onClick={handleClick}>
@@ -70,8 +69,9 @@ const List = () => {
               content={item.summary}
               release={item.releaseDate}
               poster={item.poster}
+              score={item.rating}
+              votes={item.votes}
             />
-            // <li>{item.title}</li>
           );
         })}
       </div>
