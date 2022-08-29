@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import Card from "./Card";
 
 const List = () => {
   const [mediaToggle, setMediaToggle] = useState("movie");
@@ -17,7 +18,6 @@ const List = () => {
       return;
     }
     updateList();
-    console.log(list);
   }, [mediaToggle]);
 
   const updateList = () => {
@@ -29,10 +29,11 @@ const List = () => {
         let items = [];
         response.data.results.forEach((item) => {
           const toAdd = {
-            title: item.title,
+            title: mediaToggle === "movie" ? item.title : item.name,
             summary: item.overview,
-            release: item.release_date,
-            poster: item.poster_path,
+            releaseDate:
+              mediaToggle === "movie" ? item.release_date : item.first_air_date,
+            poster: "https://image.tmdb.org/t/p/original/" + item.poster_path,
             rating: item.vote_average,
             votes: item.vote_count,
           };
@@ -45,7 +46,7 @@ const List = () => {
 
   return (
     <div className="container-fluid text-center">
-      <h1>Mode: {mediaToggle}</h1>
+      <p>Mode: {mediaToggle.toUpperCase()}</p>
       <div className="row justify-content-center">
         <div className="col-4 active">
           <h3 name="movie" value="movie" onClick={handleClick}>
@@ -57,13 +58,23 @@ const List = () => {
             Television
           </h3>
         </div>
-        {/* <div className="col-4">
-          <h3 name="person" value="person" onClick={handleClick}>
-            People
-          </h3>
-        </div> */}
       </div>
-      {/* <ul>map list</ul> */}
+      <div className="container">
+        {list.map((item, index) => {
+          return (
+            <Card
+              mode={mediaToggle}
+              key={index}
+              id={index + 1}
+              title={item.title}
+              content={item.summary}
+              release={item.releaseDate}
+              poster={item.poster}
+            />
+            // <li>{item.title}</li>
+          );
+        })}
+      </div>
     </div>
   );
 };

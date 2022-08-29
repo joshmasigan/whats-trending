@@ -7,6 +7,19 @@ h3 {
   cursor: pointer;
 }
 
+.card {
+  padding: 0;
+  max-width: 400px;
+}
+
+.card-img-top {
+  max-height: 650px;
+  max-width: 400px;
+  align-self: center;
+  border-radius: 5px;
+  /* margin-top: 0.5rem; */
+}
+
 .active {
   transition: 0.4s all ease;
   text-decoration: underline;
