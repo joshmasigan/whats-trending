@@ -1,6 +1,10 @@
-* {
-  /* background: #f1f1f1; */
-  /* color: #f1f1f1; */
+/* * {
+  background: #f1f1f1;
+  color: #f1f1f1;
+} */
+
+body {
+  background-color: #3b9ae1;
 }
 
 h3 {
@@ -9,18 +13,47 @@ h3 {
 
 .card {
   padding: 0;
-  max-width: 400px;
+  max-width: 1000px;
+  background-color: #e8f9fd;
+  border: none;
 }
 
-.card-img-top {
-  max-height: 650px;
-  max-width: 400px;
-  align-self: center;
-  border-radius: 5px;
-  /* margin-top: 0.5rem; */
+.card-img {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.navbar {
+  background-color: #3120e0;
+}
+
+.navbar-brand {
+  color: #e8f9fd;
+}
+
+.main {
+  margin-top: 2rem;
+}
+
+.tabs {
+  max-width: 500px;
 }
 
 .active {
-  transition: 0.4s all ease;
-  text-decoration: underline;
+  border-radius: 20px;
+  color: #000000;
+  background-color: #e8f9fd;
+  transition: 0.4s all ease-in-out;
+}
+
+.media-header {
+  padding-top: 5px;
+  border-radius: 20px;
+}
+
+.date {
+  /* position: absolute; */
+  margin-top: 5rem;
 }

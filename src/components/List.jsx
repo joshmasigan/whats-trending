@@ -23,7 +23,7 @@ const List = () => {
   const updateList = () => {
     axios
       .get(
-        `https://api.themoviedb.org/3/trending/${mediaToggle}/week?api_key=958093eb133e91a04b7e95d8e571c210`
+        `https://api.themoviedb.org/3/trending/${mediaToggle}/day?api_key=958093eb133e91a04b7e95d8e571c210`
       )
       .then((response) => {
         let items = [];
@@ -45,14 +45,26 @@ const List = () => {
   };
 
   return (
-    <div className="container-fluid text-center">
-      <div className="row justify-content-center">
-        <div className="col-4 active">
+    <div className="container-fluid main">
+      <div className="row justify-content-center text-center">
+        <div
+          className={
+            mediaToggle === "movie"
+              ? "col-sm-2 media-header active"
+              : "col-sm-2 media-header"
+          }
+        >
           <h3 name="movie" value="movie" onClick={handleClick}>
             Movies
           </h3>
         </div>
-        <div className="col-4">
+        <div
+          className={
+            mediaToggle === "tv"
+              ? "col-sm-2 media-header active "
+              : "col-sm-2 media-header"
+          }
+        >
           <h3 name="tv" value="tv" onClick={handleClick}>
             Television
           </h3>
