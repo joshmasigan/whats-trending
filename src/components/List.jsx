@@ -45,13 +45,19 @@ const List = () => {
   };
 
   return (
-    <div className="container-fluid main">
+    <div
+      className={
+        mediaToggle === "movie"
+          ? "container-fluid main-container-movie"
+          : "container-fluid main-container-tv"
+      }
+    >
       <div className="row justify-content-center text-center">
         <div
           className={
             mediaToggle === "movie"
-              ? "col-sm-2 media-header active"
-              : "col-sm-2 media-header"
+              ? "col-sm-2 media-header active-movie"
+              : "col-sm-2 media-header movie-toggle"
           }
         >
           <h3 name="movie" value="movie" onClick={handleClick}>
@@ -61,8 +67,8 @@ const List = () => {
         <div
           className={
             mediaToggle === "tv"
-              ? "col-sm-2 media-header active "
-              : "col-sm-2 media-header"
+              ? "col-sm-2 media-header active-tv "
+              : "col-sm-2 media-header tv-toggle"
           }
         >
           <h3 name="tv" value="tv" onClick={handleClick}>
@@ -74,6 +80,7 @@ const List = () => {
         {list.map((item, index) => {
           return (
             <Card
+              design={mediaToggle}
               mode={mediaToggle}
               key={index}
               id={index + 1}
