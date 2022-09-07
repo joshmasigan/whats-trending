@@ -26,7 +26,8 @@ const Card = (props) => {
               </div>
               <hr></hr>
               <p className="card-text">{props.content}</p>
-              <div className="card-footer date">
+              <hr></hr>
+              <div className="date">
                 <p className="card-subtitle">
                   {props.mode === "movie"
                     ? "Original release date: "
