@@ -11,16 +11,16 @@ const Card = (props) => {
         }
       >
         <div className="row no-gutters">
-          <div className="col-sm-5">
+          <div className="col-xl-5">
             <img src={props.poster} className="card-img" />
           </div>
-          <div className="col-sm-7">
+          <div className="col-xl-7">
             <div className="card-body">
               <div className="row">
-                <h5 className="card-title col-sm-9">
+                <h5 className="card-title col-xl-9">
                   {props.id}. "{props.title}"
                 </h5>
-                <p className="card-text col-sm-3">
+                <p className="card-text col-xl-3">
                   <b>{props.score}/10</b> ⭐️
                 </p>
               </div>
@@ -28,7 +28,7 @@ const Card = (props) => {
               <p className="card-text">{props.content}</p>
               <hr></hr>
               <div className="date">
-                <p className="card-subtitle">
+                <p className="card-text">
                   {props.mode === "movie"
                     ? "Original release date: "
                     : "First aired: "}

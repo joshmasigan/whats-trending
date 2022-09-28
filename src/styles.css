@@ -86,6 +86,10 @@ p {
   transition: 0.5s all ease-in-out;
 }
 
+.card-container {
+  min-width: 500px;
+}
+
 .movie-card {
   padding: 0;
   max-width: 1000px;
@@ -110,7 +114,7 @@ p {
 }
 
 .date {
-  position: absolute;
+  position: relative;
   margin-bottom: 1.5rem;
   bottom: 0;
 }

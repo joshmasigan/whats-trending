@@ -1,7 +1,7 @@
 import React from "react";
 
 const MediaItem = () => {
-  return <div>MediaItem</div>;
+  return <div>X</div>;
 };
 
 export default MediaItem;

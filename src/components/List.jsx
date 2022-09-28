@@ -67,12 +67,12 @@ const List = () => {
         <div
           className={
             mediaToggle === "tv"
-              ? "col-sm-2 media-header active-tv "
+              ? "col-sm-2 media-header active-tv"
               : "col-sm-2 media-header tv-toggle"
           }
         >
           <h3 name="tv" value="tv" onClick={handleClick}>
-            Television
+            TV
           </h3>
         </div>
       </div>
